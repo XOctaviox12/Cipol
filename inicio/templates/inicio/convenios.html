@@ -1,0 +1,214 @@
+{% extends "inicio/home.html" %}
+{% load static %}
+{% block titulo %}Convenios{% endblock %}
+{% block contenido %}
+
+<style>
+/* GENERAL */
+.fra-container {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fra-content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.fra-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.fra-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* SECCIÓN 1 */
+.hero-section img {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* SECCIÓN 2 */
+.section-title {
+  background-color: #f8d7da;
+  padding-top: 60px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: #333;
+  font-size: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  line-height: 1.5;
+}
+
+/* GRID */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* más grandes */
+  gap: 35px;
+  justify-content: center;
+  background-color: #f8d7da;
+  padding: 20px 40px 80px 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 110px; /* más grande */
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #d6336c;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #d6336c;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* SECCIÓN 3 */
+.final-section {
+  background-color: white;
+  padding: 80px 20px;
+}
+
+.final-section h2 {
+  color: #d6336c;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .cards-section {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .fra-content h2 {
+    font-size: 2rem;
+  }
+  .fra-content p {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<!-- SECCIÓN 1 -->
+<div class="fra-container hero-section">
+  <div class="fra-content">
+    <h2>Convenios</h2>
+    <img src="{% static 'img/convenios_1.jpg' %}" alt="Convenios CIPOL" />
+  </div>
+</div>
+
+<!-- TÍTULO DE SECCIÓN 2 -->
+<div class="section-title">
+  <h2>Ofrecemos una variedad de convenios con instituciones aliadas que brindan beneficios académicos, sociales y de desarrollo para el personal policial y sus familias.</h2>
+</div>
+
+<!-- SECCIÓN 2: PRIMEROS 5 CARDS -->
+<div class="cards-section">
+  <div class="card">
+    <img src="{% static 'img/convenios_2.jpg' %}" alt="Convenio 1" />
+    <h3>Universidad Latina de las Américas</h3>
+    <p>Descuentos en formación académica superior.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_3.jpg' %}" alt="Convenio 2" />
+    <h3>Fundación Donarte</h3>
+    <p>Apoyo a niñas y niños con cáncer y sus familias.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_4.jpg' %}" alt="Convenio 3" />
+    <h3>CANACO Morelia</h3>
+    <p>Fortalece vínculos empresariales y beneficios locales.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_6.png' %}" alt="Convenio 4" />
+    <h3>Comisión Estatal de Derechos Humanos</h3>
+    <p>Promueve el respeto y capacitación en derechos humanos.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_5.webp' %}" alt="Convenio 5" />
+    <h3>Sinergia</h3>
+    <p>Fomenta el bienestar y desarrollo profesional del personal.</p>
+  </div>
+</div>
+
+<!-- SECCIÓN 2: RESTO DE CARDS -->
+<div class="cards-section">
+  <div class="card">
+    <img src="{% static 'img/convenios_8.jpg' %}" alt="Convenio 6" />
+    <h3>Fundación DonaArte</h3>
+    <p>Apoya causas sociales y culturales a través del arte.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_9.jpg' %}" alt="Convenio 7" />
+    <h3>Mesa Ciudadana de Seguridad</h3>
+    <p>Colabora en proyectos de seguridad y justicia regional.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_10.jpg' %}" alt="Convenio 8" />
+    <h3>Michoacán Humanitario</h3>
+    <p>Asistencia social y apoyo a comunidades vulnerables.</p>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'img/convenios_11.jpg' %}" alt="Convenio 9" />
+    <h3>FUCIDIM</h3>
+    <p>Fomenta la vinculación entre sector público y privado.</p>
+  </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="fra-container final-section">
+  <div class="fra-content">
+    <h2>Seguimos construyendo alianzas que fortalezcan el bienestar, desarrollo y capacitación de quienes forman parte de CIPOL.</h2>
+  </div>
+</div>
+
+{% endblock %}

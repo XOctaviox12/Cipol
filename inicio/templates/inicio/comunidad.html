@@ -1,0 +1,280 @@
+{% extends "inicio/home.html" %}
+{% load static %}
+{% block titulo %}Comunidad CIPOL{% endblock %}
+{% block contenido %}
+
+<style>
+  /* GENERAL */
+  .section {
+    width: 100%;
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 900px;
+  }
+
+  /* SECCIÓN 1: Fondo blanco con imagen grande */
+  .community-intro {
+    background-color: white;
+  }
+
+  .community-intro img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* SECCIÓN 2: Fondo gris y cards */
+  .community-team {
+    background-color: #f2f2f2;
+  }
+
+  .team-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .team-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 380px; /* Altura uniforme */
+  }
+
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .team-card img {
+    display: block;
+    margin: 0 auto 15px auto; 
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .icon-card {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    display: block;
+    margin: 0 auto 15px auto; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-card i {
+    font-size: 50px;
+    color: #003366;
+  }
+
+  /* Texto animado con colores del logo */
+  .gradient-text {
+    font-weight: 900;
+    background: linear-gradient(
+      90deg,
+      #002b80,
+      #7f00ff,
+      #00b140,
+      #ff0000,
+      #ff6600,
+      #ffd100
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s ease infinite;
+    background-size: 300% 300%;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* SECCIÓN 3: Descuentos fondo azul oscuro */
+  .community-discounts {
+    background-color: #003366;
+    color: white;
+  }
+
+  .discount-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .discount-card {
+    background-color: #f2f2f2;
+    color: #003366;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .discount-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .discount-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+
+  .phone-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #003366;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .phone-link:hover {
+    color: #0055cc;
+    text-decoration: underline;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .team-cards, .discount-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-card, .discount-card {
+      max-width: 90%;
+    }
+  }
+</style>
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<!-- SECCIÓN 1: Introducción -->
+<section class="section community-intro">
+  <h2>Comunidad CIPOL</h2>
+  <h3>Siempre en busca de inspiración</h3>
+  <p>
+    Este espacio es para mantenernos unidos como red de apoyo entre policías, autoridades, instituciones de seguridad y ciudadanía.
+    Aquí compartiremos información importante, alertas, eventos, capacitaciones y mensajes para dignificar y fortalecer nuestra labor.
+  </p>
+  <img src="{% static 'img/comunidad_seccion_1.jpg' %}" alt="Comunidad CIPOL" />
+</section>
+
+<!-- SECCIÓN 2: Beneficios -->
+<section class="section community-team">
+  <h2>Beneficios al pertenecer a <span class="gradient-text">Prodefensa CIPOL</span></h2>
+  <p>
+    Al integrarse a Prodefensa CIPOL, no solo refuerzan su compromiso con la seguridad y el servicio a la ciudadanía, sino que también se suman a una red que promueve la profesionalización, la colaboración y el reconocimiento del trabajo policial. Gracias por su entrega, disciplina y vocación. Este es un paso más hacia la consolidación de un cuerpo policial fuerte, confiable y cercano a la sociedad.
+  </p>
+
+  <div class="team-cards">
+    <div class="team-card">
+      <img src="{% static 'img/beneficios_6.webp' %}" alt="Beneficio 1">
+      <h3>Descuentos con empresas aliadas</h3>
+      <p>Acceso a convenios especiales con empresas que valoran su servicio.</p>
+    </div>
+
+    <div class="team-card">
+      <img src="{% static 'img/beneficios_2.jpg' %}" alt="Beneficio 2">
+      <h3>Consulta Psicológica</h3>
+      <p>Bienestar emocional para un mejor desempeño y calidad de vida.</p>
+  <a href="https://wa.me/527293595460?text=Hola,%20me%20interesa%20información%20sobre%20consulta%20nutricional" target="_blank" class="phone-link">📞 Solicita tu consulta</a>
+    </div>
+
+    <div class="team-card">
+      <img src="{% static 'img/beneficios_3.jpg' %}" alt="Beneficio 3">
+      <h3>Consulta Nutricional</h3>
+      <p>Fomenta hábitos saludables que mejoran la vida profesional y familiar.</p>
+      <a href="https://wa.me/527293595460?text=Hola,%20me%20interesa%20información%20sobre%20consulta%20nutricional" target="_blank" class="phone-link">📞 Solicita tu consulta</a>
+    </div>
+
+    <div class="team-card">
+      <img src="{% static 'img/beneficios_4.png' %}" alt="Beneficio 4">
+      <h3>Servicios Integrales</h3>
+      <p>Servicios de trámites en instituciones públicas y trámites personales</p>
+      <a href="https://wa.me/524433650359?text=Hola,%20me%20interesa%20información%20sobre%20servicios%20integrales" target="_blank" class="phone-link">📞 Llama para más información</a>
+    </div>
+
+    <!-- Card: Escuelas y Licenciaturas -->
+    <div class="team-card">
+      <div class="icon-card">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <h3>Escuelas y Licenciaturas</h3>
+      <p>Acceso a programas educativos en escuelas de prestigio.</p>
+    </div>
+
+    <!-- Card: Eventos Exclusivos -->
+    <div class="team-card">
+      <div class="icon-card">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <h3>Eventos Exclusivos</h3>
+      <p>Invitaciones a actividades y eventos privados de la comunidad CIPOL.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: Descuentos -->
+<section class="section community-discounts">
+  <h2>Descuentos Exclusivos</h2>
+  <div class="discount-cards">
+    {% for d in descuentos %}
+      <div class="discount-card">
+        <img src="{{ d.imagen.url }}" alt="{{ d.titulo }}">
+        <h3>{{ d.titulo }}</h3>
+        {% if d.descripcion %}
+          <p>{{ d.descripcion }}</p>
+        {% endif %}
+      </div>
+    {% empty %}
+      <p>No hay descuentos disponibles en este momento.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
