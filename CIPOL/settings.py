@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']  # Temporal, Render requiere que haya al menos algo
 
 
